@@ -21,10 +21,13 @@ namespace DataGridViewAndReportViewer
 
 			// Load DataSource with student Data
 			this.StudentBindingSource.DataSource = data;
+
+			// Create parameters collection with one value
 			ReportParameter[] rParams = new ReportParameter[] { 
 				new ReportParameter("DaVal", "stringValue") 
 			};
 
+			// Add parameters to local report
 			this.reportViewer1.LocalReport.SetParameters(rParams);
 		}
 
