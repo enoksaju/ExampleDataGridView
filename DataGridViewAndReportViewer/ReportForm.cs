@@ -1,4 +1,5 @@
-﻿using Shared;
+﻿using Microsoft.Reporting.WinForms;
+using Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,11 @@ namespace DataGridViewAndReportViewer
 
 			// Load DataSource with student Data
 			this.StudentBindingSource.DataSource = data;
+			ReportParameter[] rParams = new ReportParameter[] { 
+				new ReportParameter("DaVal", "stringValue") 
+			};
+
+			this.reportViewer1.LocalReport.SetParameters(rParams);
 		}
 
 		private void ReportForm_Load(object sender, EventArgs e)
